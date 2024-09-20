@@ -59,5 +59,21 @@ const returnedTarget = Object.assign(target, source,val);
 console.log(target); 
 console.log(returnedTarget);
 
+// Concept of RestOperator
+// With the help of Rest Operator we can pass n numbers of params from function
+function sum(...numbers){
+  console.log('Numbers::',numbers)
+  return numbers.reduce((acc,res)=>{ return acc=acc+res })
+}
+console.log(sum(1,3,6))
+
+// Calculating total ages Of Person In party Both Guest and  Host Using Rest Operator
+function calculateTotalAgesForBothGuestAndHost(hostAge,...guestAge){ 
+  let totalSumOfGuestAges=guestAge.reduce((acc,res)=>{return acc=acc+res  })
+  console.log('Guest Ages::',totalSumOfGuestAges)
+  return hostAge+totalSumOfGuestAges
+}
+
+
 
 
