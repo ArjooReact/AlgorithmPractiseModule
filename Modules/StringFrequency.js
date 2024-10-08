@@ -263,7 +263,23 @@ function getMaximumFrequencyStringUsingMapClass(str){
     // console.log(key_ary)
     return `Maximum repeating frequency count is ${max_count}`
  }
-  
+  const strings = ["apple", "Banana", "cherry", "apple", "Cherry", "banana"];
+function sortingFruitsDuplicateName(){
+let sortedArray=[]
+for(let i=0;i<strings.length;i++){
+  console.log('Fruits:::',strings[i][0].toUpperCase())
+    for(let j=i+1;j<strings.length;j++){
+      if(strings[i][0].toUpperCase()==strings[j][0].toUpperCase()){
+        sortedArray.push(strings[i])
+      }
+      // if(strings[i]==strings[j]){
+      //   sortedArray.push(strings[i])
+      // }
+    }
+}
+console.log('Sorted..',sortedArray)
+}
+
   
     return(<SafeAreaView style={styles.mainContainer}>
     <Text>Strings</Text>
