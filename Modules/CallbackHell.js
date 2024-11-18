@@ -82,3 +82,43 @@ const styles = StyleSheet.create({
 });
 
 export default CallbackHell;
+
+////// callback hell using js ////////
+
+function makeCheese(_mCallback){
+  setTimeout(()=>{
+    let cheese='cheese is ready'
+    _mCallback(cheese)
+  },3000)
+}
+
+function makeDough(cheese,_mCallback){
+  setTimeout(()=>{
+    let dough=cheese+'  Dough isready'
+    _mCallback(dough)
+  },3000)
+}
+
+function makePizza(dough,_mCallback){
+  setTimeout(()=>{
+    let pizza=dough+'  pizza is ready....'
+    _mCallback(pizza)
+  },3000)
+}
+
+function callbackHell(){
+  makeCheese(cheese=>{
+  console.log('cheese.....',cheese)
+  makeDough(cheese,dough=>{
+    console.log('dough.....',dough)
+    makePizza(dough,pizza=>{
+      console.log('pizzaa..........',pizza)
+    })
+  })
+})
+}
+
+callbackHell()
+
+
+
