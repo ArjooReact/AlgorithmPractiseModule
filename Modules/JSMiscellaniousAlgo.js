@@ -13,8 +13,10 @@ let person1={
   lastName:'Sharma',
 }
 
-person.getDetails.call(person1)
+//person.getDetails.call(person1)
+// In call method we pass argument as comma separator
 getDetails.call(person,'kolkata','wb')
+//In bind methos we pass second Argument as Array list
 getDetails.apply(person,['kolkata','wb'])
 
 let getFunc=getDetails.bind(person,['kolkata','wb'])
