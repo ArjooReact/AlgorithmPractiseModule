@@ -279,8 +279,33 @@ for(let i=0;i<strings.length;i++){
 }
 console.log('Sorted..',sortedArray)
 }
+/// Here we Sort Duplicate Fruits Name into separete array
+   function sortingOfDuplicateFruitsNameOnSeprateArray(){
+const strings_array = ["apple", "Banana", "cherry", "apple", "Cherry", "banana","Apple","Apple","Cherry","Litchi","Litchi"];
+let sorted_array=[]
+for(let i=0;i<strings_array.length;i++){
+  console.log('FRUITS NAME.....',strings_array[i].toUpperCase())
+  for(let j=i+1;j<strings_array.length;j++){
+    if(strings_array[i].toUpperCase()==strings_array[j].toUpperCase()){
+      let isPresent=sorted_array.some(element=>                  element==strings_array[j].toUpperCase())
+      if(!isPresent)sorted_array.push(strings_array[j].toUpperCase())
+      break
+    }
+  }
+}
 
-  
+console.log('SORTED_ARRAY....',sorted_array)
+ }
+
+sortingOfDuplicateFruitsNameOnSeprateArray()
+
+const strings_array = ["apple", "Banana", "cherry", "apple", "Cherry", "banana","Apple","Apple","Cherry","Litchi","Litchi"];
+///// Example of Array.some returs callback with item which return boolean true/false weather particular element is present inside an array
+let isPresent=strings_array.some((element)=>{
+  console.log('Element.....',element)
+  return element==='apple'
+})
+console.log('present..',isPresent)
     return(<SafeAreaView style={styles.mainContainer}>
     <Text>Strings</Text>
     </SafeAreaView>)
